@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Informe de Baja</title>
+    <link rel="stylesheet" href="modal_informe_baja.css">
+</head>
+<body>
+    <!-- Overlay del modal -->
+    <div id="modal-overlay" class="modal-overlay">
+        <!-- Modal container -->
+        <div class="modal-container">
+            <!-- Botón de cerrar -->
+            <button class="close-btn" id="close-modal">×</button>
+            
+            <!-- Contenido del modal -->
+            <div class="modal-content">
+                <!-- Sección de motivo -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-title">MOTIVO DE BAJA CARGADO PARA EL MATERIAL:</span>
+                        <span class="material-code">159.9:37 SOL 8</span>
+                    </div>
+                    <div class="input-box">
+                        <textarea id="motivo-baja" placeholder="Al libro le faltan hojas, o pedazos de estas." readonly>Al libro le faltan hojas, o pedazos de estas.</textarea>
+                    </div>
+                </div>
+                
+                <!-- Sección de localización -->
+                <div class="section">
+                    <div class="section-title">LOCALIZACIÓN</div>
+                    <div class="input-box">
+                        <input type="text" id="localizacion" value="Casa de Juan." readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Botón para mostrar el modal (solo para demostración) -->
+    <button id="show-modal-btn" class="demo-btn">Mostrar Modal de Informe de Baja</button>
+    
+    <script src="modal_informe_baja.js"></script>
+</body>
+</html>

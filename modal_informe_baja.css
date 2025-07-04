@@ -1,0 +1,248 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Overlay del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+/* Container principal del modal */
+.modal-container {
+    background-color: #ffffff;
+    border: 4px solid #8b4a8b;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 700px;
+    min-height: 300px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #8b4a8b;
+    transform: scale(1.1);
+}
+
+/* Contenido del modal */
+.modal-content {
+    padding: 25px 35px 35px 35px;
+}
+
+/* Secciones generales */
+.section {
+    margin-bottom: 30px;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+/* Header de la sección de motivo */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.material-code {
+    color: #8b4a8b;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* Cajas de input */
+.input-box {
+    position: relative;
+}
+
+.input-box textarea,
+.input-box input {
+    width: 100%;
+    background-color: #e3f2fd;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    resize: none;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-box textarea {
+    min-height: 120px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.input-box input {
+    height: 50px;
+}
+
+.input-box textarea:focus,
+.input-box input:focus {
+    border-color: #9ca3af;
+}
+
+/* Estilos para campos readonly */
+.input-box textarea[readonly],
+.input-box input[readonly] {
+    background-color: #e3f2fd;
+    cursor: text;
+}
+
+/* Botón de demostración */
+.demo-btn {
+    background-color: #8b4a8b;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 74, 139, 0.3);
+}
+
+.demo-btn:hover {
+    background-color: #6d3a6d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 74, 139, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-container {
+        width: 95%;
+        margin: 20px;
+        border-radius: 15px;
+    }
+    
+    .modal-content {
+        padding: 20px 25px 30px 25px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .section-title,
+    .material-code {
+        font-size: 12px;
+    }
+    
+    .input-box textarea,
+    .input-box input {
+        font-size: 13px;
+        padding: 12px;
+    }
+    
+    .input-box textarea {
+        min-height: 100px;
+        max-height: 100px;
+    }
+    
+    .input-box input {
+        height: 45px;
+    }
+    
+    .close-btn {
+        font-size: 28px;
+        width: 30px;
+        height: 30px;
+        top: 12px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-container {
+        width: 98%;
+        min-height: 250px;
+    }
+    
+    .modal-content {
+        padding: 15px 20px 25px 20px;
+    }
+    
+    .section {
+        margin-bottom: 25px;
+    }
+    
+    .input-box textarea {
+        min-height: 80px;
+        max-height: 80px;
+    }
+}
